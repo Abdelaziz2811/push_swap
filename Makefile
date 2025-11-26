@@ -1,8 +1,10 @@
 NAME = push_swap
 SRCS_DIR = srcs
+OPERS_DIR = $(SRCS_DIR)/operations
 INC = includes
 
-SRCS = $(SRCS_DIR)/push_swap.c $(SRCS_DIR)/push_swap_utils.c
+SRCS = $(SRCS_DIR)/push_swap.c $(SRCS_DIR)/push_swap_utils.c $(OPERS_DIR)/push.c \
+	   $(OPERS_DIR)/rotate.c $(OPERS_DIR)/rrotate.c $(OPERS_DIR)/swap.c
 OBJS = $(SRCS:.c=.o)
 
 FT_PRINTF_DIR = ft_printf

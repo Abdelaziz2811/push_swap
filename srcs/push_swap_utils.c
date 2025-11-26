@@ -6,17 +6,36 @@
 /*   By: abahoumi <abahoumi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/22 14:15:43 by abahoumi          #+#    #+#             */
-/*   Updated: 2025/11/22 15:53:15 by abahoumi         ###   ########.fr       */
+/*   Updated: 2025/11/23 17:54:33 by abahoumi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	parse_args(char **args)
+int	contains_duplicate(char **args)
 {
 	int	i;
-	int	j;
 	int	k;
+
+	i = 0;
+	while (args[i])
+	{
+		k = i + 1;
+		while (args[k])
+		{
+			if (ft_atoi(args[i]) == ft_atoi(args[k++]))
+				return (1);
+		}
+		i++;
+	}
+	return (0);
+}
+
+int	parse_args(char **args)
+{
+	int		i;
+	int		j;
+	char	*s_nbr;
 
 	i = 0;
 	while (args[i])
@@ -28,15 +47,21 @@ int	parse_args(char **args)
 			j++;
 		if (args[i][j])
 			return (0);
-		if (ft_strlen(ft_itoa(ft_atoi(args[i]))) != ft_strlen(args[i]))
-			return (0);
-		k = i + 1;
-		while (args[k])
-		{
-			if (ft_atoi(args[i]) == ft_atoi(args[k++]))
-				return (0);
-		}
+		s_nbr = ft_itoa(ft_atoi(args[i]));
+		if (ft_strlen(s_nbr) != ft_strlen(args[i]))
+			return (free(s_nbr), 0);
+		free(s_nbr);
 		i++;
 	}
-	return (1);
+	return (!contains_duplicate(args));
+}
+
+void	free_args(char **args)
+{
+	int	i;
+
+	i = 0;
+	while (args[i])
+		free(args[i++]);
+	free(args);
 }

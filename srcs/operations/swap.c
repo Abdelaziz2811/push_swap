@@ -1,30 +1,13 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   swap.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: abahoumi <abahoumi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/22 11:18:07 by abahoumi          #+#    #+#             */
-/*   Updated: 2025/11/23 17:57:29 by abahoumi         ###   ########.fr       */
+/*   Created: 2025/11/23 14:45:49 by abahoumi          #+#    #+#             */
+/*   Updated: 2025/11/23 14:57:05 by abahoumi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-int	main(int argc, char **argv)
-{
-	char	**args;
-
-	if (argc == 1 || (argc == 2 && !*argv[1]))
-		return (0);
-	if (argc == 2)
-		args = ft_split(argv[1], ' ');
-	else
-		args = argv + 1;
-	if (!parse_args(args))
-		return (ft_putendl_fd("Error", 2), 0);
-	if (argc == 2)
-		free_args(args);
-	return (0);
-}
