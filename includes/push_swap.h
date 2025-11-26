@@ -6,7 +6,7 @@
 /*   By: abahoumi <abahoumi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/22 11:18:27 by abahoumi          #+#    #+#             */
-/*   Updated: 2025/11/25 14:39:12 by abahoumi         ###   ########.fr       */
+/*   Updated: 2025/11/26 11:50:34 by abahoumi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ size_t	stack_size(t_stack *stack);
 void	sa(t_stack **a, int print);
 void	sb(t_stack **b, int print);
 void	ss(t_stack **a, t_stack **b, int print);
-void	pa(t_stack **a, t_stack **b, int print);
+void	pa(t_stack **b, t_stack **a, int print);
 void	pb(t_stack **a, t_stack **b, int print);
 void	ra(t_stack **a, int print);
 void	rb(t_stack **b, int print);
@@ -47,5 +47,7 @@ void	rr(t_stack **a, t_stack **b, int print);
 void	rra(t_stack **a, int print);
 void	rrb(t_stack **b, int print);
 void	rrr(t_stack **a, t_stack **b, int print);
+void	sort_three(t_stack **stack);
+void	sort_five(t_stack **a, t_stack **b);
 
 #endif

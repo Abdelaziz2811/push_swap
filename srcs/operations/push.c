@@ -6,7 +6,7 @@
 /*   By: abahoumi <abahoumi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/23 14:46:04 by abahoumi          #+#    #+#             */
-/*   Updated: 2025/11/25 11:11:12 by abahoumi         ###   ########.fr       */
+/*   Updated: 2025/11/26 11:47:06 by abahoumi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ static void	push(t_stack **sender, t_stack **receiver)
 	*receiver = node_to_push;
 }
 
-void	pa(t_stack **a, t_stack **b, int print)
+void	pa(t_stack **b, t_stack **a, int print)
 {
 	push(b, a);
 	if (print)
