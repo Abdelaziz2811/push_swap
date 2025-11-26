@@ -6,13 +6,13 @@
 /*   By: abahoumi <abahoumi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/22 14:15:43 by abahoumi          #+#    #+#             */
-/*   Updated: 2025/11/23 17:54:33 by abahoumi         ###   ########.fr       */
+/*   Updated: 2025/11/24 10:44:19 by abahoumi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	contains_duplicate(char **args)
+static int	contains_duplicate(char **args)
 {
 	int	i;
 	int	k;
