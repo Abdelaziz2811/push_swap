@@ -6,7 +6,7 @@
 /*   By: abahoumi <abahoumi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/22 11:18:27 by abahoumi          #+#    #+#             */
-/*   Updated: 2025/11/26 11:50:34 by abahoumi         ###   ########.fr       */
+/*   Updated: 2025/11/27 12:05:47 by abahoumi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,5 +49,7 @@ void	rrb(t_stack **b, int print);
 void	rrr(t_stack **a, t_stack **b, int print);
 void	sort_three(t_stack **stack);
 void	sort_five(t_stack **a, t_stack **b);
+t_stack	*find_highest(t_stack *stack);
+void	init_nodes_a(t_stack *a, t_stack *b);
 
 #endif
