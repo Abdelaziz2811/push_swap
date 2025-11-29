@@ -6,15 +6,20 @@
 /*   By: abahoumi <abahoumi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/22 11:18:27 by abahoumi          #+#    #+#             */
-/*   Updated: 2025/11/27 12:05:47 by abahoumi         ###   ########.fr       */
+/*   Updated: 2025/11/29 11:23:49 by abahoumi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 
+# define INT_MAX 2147483647
+# define INT_MIN -2147483648
+
 # include "../ft_printf/includes/ft_printf.h"
 
+char	*quote_args(char **argv);
+char	**get_args(char **argv);
 int		parse_args(char **args);
 void	free_args(char **args);
 
@@ -50,6 +55,12 @@ void	rrr(t_stack **a, t_stack **b, int print);
 void	sort_three(t_stack **stack);
 void	sort_five(t_stack **a, t_stack **b);
 t_stack	*find_highest(t_stack *stack);
+t_stack	*find_smallest(t_stack *stack);
 void	init_nodes_a(t_stack *a, t_stack *b);
+void	current_index(t_stack *stack);
+void	move_a_to_b(t_stack **a, t_stack **b);
+void	init_nodes_b(t_stack *a, t_stack *b);
+void	prep_for_push(t_stack **stack, t_stack *cheapest, char stack_name);
+void	sort_stacks(t_stack **a, t_stack **b);
 
 #endif
