@@ -6,11 +6,49 @@
 /*   By: abahoumi <abahoumi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/22 14:15:43 by abahoumi          #+#    #+#             */
-/*   Updated: 2025/11/24 10:44:19 by abahoumi         ###   ########.fr       */
+/*   Updated: 2025/11/29 11:23:09 by abahoumi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+char	*quote_args(char **argv)
+{
+	int		i;
+	char	*args;
+	char	*old_args;
+
+	i = 1;
+	args = ft_strdup("");
+	if (!args)
+		return (NULL);
+	while (argv[i])
+	{
+		old_args = args;
+		args = ft_strjoin(args, argv[i]);
+		if (!args)
+			return (free(old_args), NULL);
+		free(old_args);
+		old_args = args;
+		args = ft_strjoin(args, " ");
+		if (!args)
+			return (free(old_args), NULL);
+		free(old_args);
+		i++;
+	}
+	return (args);
+}
+
+char	**get_args(char **argv)
+{
+	char	*quoted_args;
+	char	**args;
+
+	quoted_args = quote_args(argv);
+	args = ft_split(quoted_args, ' ');
+	free(quoted_args);
+	return (args);
+}
 
 static int	contains_duplicate(char **args)
 {
