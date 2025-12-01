@@ -6,21 +6,20 @@
 /*   By: abahoumi <abahoumi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/22 11:18:27 by abahoumi          #+#    #+#             */
-/*   Updated: 2025/11/29 11:23:49 by abahoumi         ###   ########.fr       */
+/*   Updated: 2025/12/01 14:56:28 by abahoumi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 
-# define INT_MAX 2147483647
-# define INT_MIN -2147483648
-
 # include "../ft_printf/includes/ft_printf.h"
+# include <limits.h>
 
-char	*quote_args(char **argv);
 char	**get_args(char **argv);
-int		parse_args(char **args);
+int		valid_format(char **args);
+int		contains_duplicate(char **args);
+int		get_leading_zeros_count(char *arg);
 void	free_args(char **args);
 
 typedef struct s_stack

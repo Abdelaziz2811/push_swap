@@ -6,7 +6,7 @@
 /*   By: abahoumi <abahoumi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/26 15:42:09 by abahoumi          #+#    #+#             */
-/*   Updated: 2025/11/28 10:16:01 by abahoumi         ###   ########.fr       */
+/*   Updated: 2025/12/01 12:12:46 by abahoumi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,12 +37,12 @@ static void	set_target_a(t_stack *a, t_stack *b)
 {
 	t_stack	*target_node;
 	t_stack	*current_b;
-	int		current_target;
+	long	current_target;
 
 	while (a)
 	{
 		current_b = b;
-		current_target = INT_MIN;
+		current_target = LONG_MIN;
 		while (current_b)
 		{
 			if (a->value > current_b->value
@@ -53,7 +53,7 @@ static void	set_target_a(t_stack *a, t_stack *b)
 			}
 			current_b = current_b->next;
 		}
-		if (current_target == INT_MIN)
+		if (current_target == LONG_MIN)
 			a->target_node = find_highest(b);
 		else
 			a->target_node = target_node;
@@ -83,10 +83,10 @@ static void	set_push_cost_a(t_stack *a, t_stack *b)
 
 void	set_cheapest(t_stack *stack)
 {
-	int		cheapest_value;
+	long	cheapest_value;
 	t_stack	*cheapest_node;
 
-	cheapest_value = INT_MAX;
+	cheapest_value = LONG_MAX;
 	while (stack)
 	{
 		if (stack->push_cost < cheapest_value)

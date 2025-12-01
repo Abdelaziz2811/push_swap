@@ -4,7 +4,7 @@ OPERS_DIR = $(SRCS_DIR)/operations
 STACK_DIR = $(SRCS_DIR)/stack
 INC = includes
 
-SRCS = $(SRCS_DIR)/push_swap.c $(SRCS_DIR)/push_swap_utils.c \
+SRCS = $(SRCS_DIR)/push_swap.c $(SRCS_DIR)/parser.c $(SRCS_DIR)/utils.c \
 	   $(OPERS_DIR)/push.c $(OPERS_DIR)/rotate.c $(OPERS_DIR)/rrotate.c $(OPERS_DIR)/swap.c \
 	   $(STACK_DIR)/stack.c $(STACK_DIR)/push_back.c $(STACK_DIR)/small_sort.c $(STACK_DIR)/stack_a_data.c \
 	   $(STACK_DIR)/stack_b_data.c $(STACK_DIR)/sort_helpers.c $(STACK_DIR)/sort_stacks.c

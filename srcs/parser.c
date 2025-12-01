@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap_utils.c                                  :+:      :+:    :+:   */
+/*   parser.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: abahoumi <abahoumi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/22 14:15:43 by abahoumi          #+#    #+#             */
-/*   Updated: 2025/11/29 11:23:09 by abahoumi         ###   ########.fr       */
+/*   Updated: 2025/12/01 13:38:24 by abahoumi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,30 +50,12 @@ char	**get_args(char **argv)
 	return (args);
 }
 
-static int	contains_duplicate(char **args)
-{
-	int	i;
-	int	k;
-
-	i = 0;
-	while (args[i])
-	{
-		k = i + 1;
-		while (args[k])
-		{
-			if (ft_atoi(args[i]) == ft_atoi(args[k++]))
-				return (1);
-		}
-		i++;
-	}
-	return (0);
-}
-
-int	parse_args(char **args)
+int	valid_format(char **args)
 {
 	int		i;
 	int		j;
 	char	*s_nbr;
+	int		leading_zeros_count;
 
 	i = 0;
 	while (args[i])
@@ -85,8 +67,9 @@ int	parse_args(char **args)
 			j++;
 		if (args[i][j])
 			return (0);
+		leading_zeros_count = get_leading_zeros_count(args[i]);
 		s_nbr = ft_itoa(ft_atoi(args[i]));
-		if (ft_strlen(s_nbr) != ft_strlen(args[i]))
+		if (ft_strlen(s_nbr) != ft_strlen(args[i] + leading_zeros_count))
 			return (free(s_nbr), 0);
 		free(s_nbr);
 		i++;
