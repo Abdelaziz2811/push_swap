@@ -6,7 +6,7 @@
 /*   By: abahoumi <abahoumi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/22 11:18:07 by abahoumi          #+#    #+#             */
-/*   Updated: 2025/12/01 14:48:03 by abahoumi         ###   ########.fr       */
+/*   Updated: 2025/12/02 18:11:48 by abahoumi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,8 @@ int	main(int argc, char **argv)
 			sa(&a, 1);
 		else if (stack_size(a) == 3)
 			sort_three(&a);
+		else if (stack_size(a) <= 5)
+			sort_five(&a, &b);
 		else
 			sort_stacks(&a, &b);
 	}
