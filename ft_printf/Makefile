@@ -23,6 +23,7 @@ $(NAME) : $(LIBFT_PATH) $(OBJS)
 
 $(LIBFT_PATH) :
 	make -C $(LIBFT_DIR)
+	make -C $(LIBFT_DIR) bonus
 
 %.o : %.c $(INC)/ft_printf.h
 	$(CC) $(CFLAGS) -I $(INC) -c $< -o $@
