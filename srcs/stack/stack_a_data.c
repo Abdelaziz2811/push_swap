@@ -6,7 +6,7 @@
 /*   By: abahoumi <abahoumi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/26 15:42:09 by abahoumi          #+#    #+#             */
-/*   Updated: 2025/12/01 12:12:46 by abahoumi         ###   ########.fr       */
+/*   Updated: 2025/12/05 15:27:00 by abahoumi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,18 +65,26 @@ static void	set_push_cost_a(t_stack *a, t_stack *b)
 {
 	int	a_size;
 	int	b_size;
+	int	node_a_cost;
+	int	node_b_cost;
 
 	a_size = stack_size(a);
 	b_size = stack_size(b);
 	while (a)
 	{
-		a->push_cost = a->index;
+		node_a_cost = a->index;
 		if (!(a->above_median))
-			a->push_cost = a_size - (a->index);
-		if (a->target_node->above_median)
-			a->push_cost += a->target_node->index;
+			node_a_cost = a_size - (a->index);
+		node_b_cost = a->target_node->index;
+		if (!(a->target_node->above_median))
+			node_b_cost = b_size - (a->target_node->index);
+		if ((a->above_median && a->target_node->above_median)
+			|| (!(a->above_median) && !(a->target_node->above_median)))
+		{
+			a->push_cost = get_max(node_a_cost, node_b_cost);
+		}
 		else
-			a->push_cost += b_size - (a->target_node->index);
+			a->push_cost = node_a_cost + node_b_cost;
 		a = a->next;
 	}
 }
@@ -89,6 +97,7 @@ void	set_cheapest(t_stack *stack)
 	cheapest_value = LONG_MAX;
 	while (stack)
 	{
+		stack->cheapest = 0;
 		if (stack->push_cost < cheapest_value)
 		{
 			cheapest_value = stack->push_cost;

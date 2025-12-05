@@ -6,7 +6,7 @@
 /*   By: abahoumi <abahoumi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/01 10:35:01 by abahoumi          #+#    #+#             */
-/*   Updated: 2025/12/01 13:30:45 by abahoumi         ###   ########.fr       */
+/*   Updated: 2025/12/05 15:25:32 by abahoumi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,4 +45,11 @@ int	get_leading_zeros_count(char *arg)
 		&& arg[0] == '-')
 		leading_zeros_count -= 1;
 	return (leading_zeros_count);
+}
+
+int	get_max(int a, int b)
+{
+	if (a > b)
+		return (a);
+	return (b);
 }
