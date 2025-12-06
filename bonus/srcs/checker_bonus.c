@@ -6,7 +6,7 @@
 /*   By: abahoumi <abahoumi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/03 14:08:41 by abahoumi          #+#    #+#             */
-/*   Updated: 2025/12/04 12:28:27 by abahoumi         ###   ########.fr       */
+/*   Updated: 2025/12/06 10:28:58 by abahoumi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,11 +19,11 @@ int	main(int argc, char **argv)
 	t_stack	*b;
 	t_list	*operations;
 
-	if (argc == 1 || !*argv[1])
+	if (argc == 1)
 		return (0);
 	args = get_args(argv);
-	if (!valid_format(args))
-		return (ft_putendl_fd("Error", 2), 0);
+	if (!valid_format(args) || !*argv[1])
+		return (free_args(args), ft_putendl_fd("Error", 2), 0);
 	init_stack(&a, args);
 	operations = process_operations();
 	if (!operations)

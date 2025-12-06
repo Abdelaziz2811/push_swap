@@ -6,7 +6,7 @@
 /*   By: abahoumi <abahoumi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/24 10:10:56 by abahoumi          #+#    #+#             */
-/*   Updated: 2025/11/24 18:21:42 by abahoumi         ###   ########.fr       */
+/*   Updated: 2025/12/06 10:59:55 by abahoumi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@ void	init_stack(t_stack **stack, char **args)
 	int	i;
 
 	i = 0;
+	*stack = NULL;
 	while (args[i])
 		push_back(stack, ft_atoi(args[i++]));
 }

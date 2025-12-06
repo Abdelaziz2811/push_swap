@@ -6,7 +6,7 @@
 /*   By: abahoumi <abahoumi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/27 15:56:32 by abahoumi          #+#    #+#             */
-/*   Updated: 2025/11/28 11:48:59 by abahoumi         ###   ########.fr       */
+/*   Updated: 2025/12/06 10:59:59 by abahoumi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,7 @@ void	sort_stacks(t_stack **a, t_stack **b)
 {
 	int	a_size;
 
+	*b = NULL;
 	a_size = stack_size(*a);
 	while (a_size > 3 && !stack_sorted(*a) && stack_size(*b) < 2)
 	{
