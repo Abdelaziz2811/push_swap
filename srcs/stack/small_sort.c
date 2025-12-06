@@ -6,7 +6,7 @@
 /*   By: abahoumi <abahoumi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/25 17:46:57 by abahoumi          #+#    #+#             */
-/*   Updated: 2025/11/29 11:21:48 by abahoumi         ###   ########.fr       */
+/*   Updated: 2025/12/06 15:45:23 by abahoumi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,6 +63,7 @@ void	sort_five(t_stack **a, t_stack **b)
 {
 	t_stack	*smallest_node;
 
+	*b = NULL;
 	while (stack_size(*a) > 3)
 	{
 		smallest_node = find_smallest(*a);

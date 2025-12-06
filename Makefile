@@ -7,7 +7,7 @@ OPERS_DIR = $(SRCS_DIR)/operations
 STACK_DIR = $(SRCS_DIR)/stack
 INC = includes
 BONUS_INC = bonus/includes
-GNL_INC = bonus/gnl/get_next_line.h
+GNL_INC = bonus/gnl
 
 SRCS = $(SRCS_DIR)/push_swap.c $(SRCS_DIR)/parser.c $(SRCS_DIR)/utils.c \
 	   $(OPERS_DIR)/push.c $(OPERS_DIR)/rotate.c $(OPERS_DIR)/rrotate.c $(OPERS_DIR)/swap.c \
@@ -32,7 +32,7 @@ CFLAGS = -Wall -Wextra -Werror
 all : $(NAME)
 
 $(NAME) : $(FT_PRINTF_PATH) $(OBJS)
-	$(CC) $(CFLAGS) $(FT_PRINTF_PATH) $(OBJS) -o $(NAME)
+	$(CC) $(CFLAGS) $(OBJS) $(FT_PRINTF_PATH) -o $(NAME)
 
 $(SRCS_DIR)/%.o : $(SRCS_DIR)/%.c
 	$(CC) $(CFLAGS) -I $(INC) -c $< -o $@
@@ -41,7 +41,7 @@ $(FT_PRINTF_PATH) :
 	make -C $(FT_PRINTF_DIR)
 
 bonus : $(FT_PRINTF_PATH) $(BONUS_OBJS)
-	$(CC) $(CFLAGS) $(FT_PRINTF_PATH) $(BONUS_OBJS) -o $(BONUS_NAME)
+	$(CC) $(CFLAGS) $(BONUS_OBJS) $(FT_PRINTF_PATH) -o $(BONUS_NAME)
 
 $(BONUS_SRCS_DIR)/%.o : $(BONUS_SRCS_DIR)/%.c
 	$(CC) $(CFLAGS) -I $(BONUS_INC) -c $< -o $@
