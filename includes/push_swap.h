@@ -6,7 +6,7 @@
 /*   By: abahoumi <abahoumi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/22 11:18:27 by abahoumi          #+#    #+#             */
-/*   Updated: 2025/12/05 15:25:51 by abahoumi         ###   ########.fr       */
+/*   Updated: 2025/12/07 14:02:55 by abahoumi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@ int		contains_duplicate(char **args);
 int		get_leading_zeros_count(char *arg);
 void	free_args(char **args);
 int		get_max(int a, int b);
+int		is_empty_or_whitespace(char **args);
 
 typedef struct s_stack
 {

@@ -6,7 +6,7 @@
 /*   By: abahoumi <abahoumi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/01 10:35:01 by abahoumi          #+#    #+#             */
-/*   Updated: 2025/12/05 15:25:32 by abahoumi         ###   ########.fr       */
+/*   Updated: 2025/12/07 14:02:45 by abahoumi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,4 +52,30 @@ int	get_max(int a, int b)
 	if (a > b)
 		return (a);
 	return (b);
+}
+
+static int	ft_isspace(char c)
+{
+	return (c == ' ' || c == '\t' || c == '\n'
+		|| c == '\v' || c == '\f' || c == '\r');
+}
+
+int	is_empty_or_whitespace(char **args)
+{
+	int	i;
+	int	j;
+
+	if (!args)
+		return (1);
+	i = 0;
+	while (args[i])
+	{
+		j = 0;
+		while (args[i][j] && ft_isspace(args[i][j]))
+			j++;
+		if (!args[i][j])
+			return (1);
+		i++;
+	}
+	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: abahoumi <abahoumi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/22 14:15:43 by abahoumi          #+#    #+#             */
-/*   Updated: 2025/12/01 13:38:24 by abahoumi         ###   ########.fr       */
+/*   Updated: 2025/12/07 12:17:06 by abahoumi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,6 +57,8 @@ int	valid_format(char **args)
 	char	*s_nbr;
 	int		leading_zeros_count;
 
+	if (!args)
+		return (0);
 	i = 0;
 	while (args[i])
 	{
@@ -81,6 +83,8 @@ void	free_args(char **args)
 {
 	int	i;
 
+	if (!args)
+		return ;
 	i = 0;
 	while (args[i])
 		free(args[i++]);

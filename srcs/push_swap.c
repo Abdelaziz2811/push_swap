@@ -6,7 +6,7 @@
 /*   By: abahoumi <abahoumi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/22 11:18:07 by abahoumi          #+#    #+#             */
-/*   Updated: 2025/12/06 11:00:23 by abahoumi         ###   ########.fr       */
+/*   Updated: 2025/12/07 13:52:20 by abahoumi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ int	main(int argc, char **argv)
 	if (argc == 1)
 		return (0);
 	args = get_args(argv);
-	if (!valid_format(args) || !*argv[1])
+	if (!valid_format(args) || !*argv[1] || is_empty_or_whitespace(argv))
 		return (free_args(args), ft_putendl_fd("Error", 2), 0);
 	init_stack(&a, args);
 	if (!stack_sorted(a))
