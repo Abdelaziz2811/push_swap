@@ -40,7 +40,9 @@ $(SRCS_DIR)/%.o : $(SRCS_DIR)/%.c
 $(FT_PRINTF_PATH) :
 	make -C $(FT_PRINTF_DIR)
 
-bonus : $(FT_PRINTF_PATH) $(BONUS_OBJS)
+bonus : $(BONUS_NAME)
+
+$(BONUS_NAME) : $(FT_PRINTF_PATH) $(BONUS_OBJS)
 	$(CC) $(CFLAGS) $(BONUS_OBJS) $(FT_PRINTF_PATH) -o $(BONUS_NAME)
 
 $(BONUS_SRCS_DIR)/%.o : $(BONUS_SRCS_DIR)/%.c
