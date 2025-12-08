@@ -1,20 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   checker_bonus.h                                    :+:      :+:    :+:   */
+/*   checker_utils.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: abahoumi <abahoumi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/12/03 14:09:09 by abahoumi          #+#    #+#             */
+/*   Created: 2025/12/08 16:27:15 by abahoumi          #+#    #+#             */
 /*   Updated: 2025/12/08 17:44:02 by abahoumi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/push_swap.h"
-#include "../../ft_printf/includes/ft_printf.h"
-#include "../gnl/get_next_line.h"
+#include "checker_bonus.h"
 
-t_list	*process_operations(int *is_error);
-void	execute_operations(t_list *operations, t_stack **a, t_stack **b);
-void	free_list(t_list *operations);
-void	free_memory(char **args, t_stack **a, t_stack **b);
+void	free_memory(char **args, t_stack **a, t_stack **b)
+{
+	free_args(args);
+	free_stack(a);
+	free_stack(b);
+}

@@ -6,7 +6,7 @@
 /*   By: abahoumi <abahoumi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/03 16:35:08 by abahoumi          #+#    #+#             */
-/*   Updated: 2025/12/04 18:21:12 by abahoumi         ###   ########.fr       */
+/*   Updated: 2025/12/08 17:39:08 by abahoumi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,17 +53,18 @@ void	free_list(t_list *operations)
 	}
 }
 
-t_list	*process_operations(void)
+t_list	*process_operations(int *is_error)
 {
 	t_list	*operations;
 	char	*line;
 
 	operations = NULL;
+	*is_error = 0;
 	line = get_next_line(0);
 	while (line)
 	{
 		if (!is_correct_format(line, ft_strlen(line)))
-			return (free(line), free_list(operations), NULL);
+			return (*is_error = 1, free(line), free_list(operations), NULL);
 		ft_lstadd_back(&operations, ft_lstnew((void *)ft_strdup(line)));
 		free(line);
 		line = get_next_line(0);

@@ -17,7 +17,7 @@ OBJS = $(SRCS:.c=.o)
 BONUS_SRCS = $(SRCS_DIR)/parser.c $(SRCS_DIR)/utils.c \
 			 $(OPERS_DIR)/push.c $(OPERS_DIR)/rotate.c $(OPERS_DIR)/rrotate.c $(OPERS_DIR)/swap.c \
 			 $(STACK_DIR)/stack.c $(STACK_DIR)/push_back.c \
-			 $(BONUS_SRCS_DIR)/checker_bonus.c \
+			 $(BONUS_SRCS_DIR)/checker_bonus.c $(BONUS_SRCS_DIR)/checker_utils.c \
 			 $(BONUS_SRCS_DIR)/process_operations.c $(BONUS_SRCS_DIR)/execute_operations.c \
 			 $(GNL_DIR)/get_next_line.c $(GNL_DIR)/get_next_line_utils.c
 BONUS_OBJS = $(BONUS_SRCS:.c=.o)
@@ -26,7 +26,7 @@ FT_PRINTF_DIR = ft_printf
 FT_PRINTF = libftprintf.a
 FT_PRINTF_PATH = $(FT_PRINTF_DIR)/$(FT_PRINTF)
 
-CC = cc -fsanitize=address -g3
+CC = cc
 CFLAGS = -Wall -Wextra -Werror
 
 all : $(NAME)
