@@ -6,7 +6,7 @@
 /*   By: abahoumi <abahoumi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/03 17:17:23 by abahoumi          #+#    #+#             */
-/*   Updated: 2025/12/04 18:19:47 by abahoumi         ###   ########.fr       */
+/*   Updated: 2025/12/08 14:41:46 by abahoumi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,7 @@ void	execute_operations(t_list *operations, t_stack **a, t_stack **b)
 	t_list	*to_free;
 
 	to_free = operations;
+	*b = NULL;
 	while (operations)
 	{
 		operation = (char *)operations->content;

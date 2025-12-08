@@ -26,7 +26,7 @@ FT_PRINTF_DIR = ft_printf
 FT_PRINTF = libftprintf.a
 FT_PRINTF_PATH = $(FT_PRINTF_DIR)/$(FT_PRINTF)
 
-CC = cc
+CC = cc -fsanitize=address -g3
 CFLAGS = -Wall -Wextra -Werror
 
 all : $(NAME)
