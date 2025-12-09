@@ -6,7 +6,7 @@
 /*   By: abahoumi <abahoumi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/22 14:15:43 by abahoumi          #+#    #+#             */
-/*   Updated: 2025/12/07 12:17:06 by abahoumi         ###   ########.fr       */
+/*   Updated: 2025/12/09 11:40:30 by abahoumi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,30 +50,39 @@ char	**get_args(char **argv)
 	return (args);
 }
 
+static int	is_number(char *s)
+{
+	int	i;
+
+	i = 0;
+	if (s[i] == '-' || s[i] == '+')
+		i++;
+	if (!s[i])
+		return (0);
+	while (s[i] && ft_isdigit(s[i]))
+		i++;
+	if (s[i])
+		return (0);
+	return (1);
+}
+
 int	valid_format(char **args)
 {
 	int		i;
-	int		j;
-	char	*s_nbr;
-	int		leading_zeros_count;
+	long	number;
 
 	if (!args)
 		return (0);
 	i = 0;
 	while (args[i])
 	{
-		j = 0;
-		if (args[i][j] == '-' || args[i][j] == '+')
-			j++;
-		while (args[i][j] && ft_isdigit(args[i][j]))
-			j++;
-		if (args[i][j])
+		if (!is_number(args[i]))
 			return (0);
-		leading_zeros_count = get_leading_zeros_count(args[i]);
-		s_nbr = ft_itoa(ft_atoi(args[i]));
-		if (ft_strlen(s_nbr) != ft_strlen(args[i] + leading_zeros_count))
-			return (free(s_nbr), 0);
-		free(s_nbr);
+		if (ft_strlen(args[i] + get_leading_zeros_count(args[i])) > 11)
+			return (0);
+		number = ft_atol(args[i]);
+		if (number > 2147483647 || number < -2147483648)
+			return (0);
 		i++;
 	}
 	return (!contains_duplicate(args));

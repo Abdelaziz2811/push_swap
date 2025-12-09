@@ -6,7 +6,7 @@
 /*   By: abahoumi <abahoumi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/01 10:35:01 by abahoumi          #+#    #+#             */
-/*   Updated: 2025/12/07 14:02:45 by abahoumi         ###   ########.fr       */
+/*   Updated: 2025/12/09 11:08:50 by abahoumi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,18 +33,14 @@ int	contains_duplicate(char **args)
 
 int	get_leading_zeros_count(char *arg)
 {
-	int	leading_zeros_count;
+	int	zeros_count;
 
-	leading_zeros_count = 0;
-	while (arg[leading_zeros_count] == '+' || arg[leading_zeros_count] == '-')
-		leading_zeros_count++;
-	while (arg[leading_zeros_count] == '0'
-		&& arg[leading_zeros_count + 1] != '\0')
-		leading_zeros_count++;
-	if (arg[leading_zeros_count] != '0' && arg[leading_zeros_count] != '\0'
-		&& arg[0] == '-')
-		leading_zeros_count -= 1;
-	return (leading_zeros_count);
+	zeros_count = 0;
+	if (arg[zeros_count] == '+' || arg[zeros_count] == '-')
+		zeros_count++;
+	while (arg[zeros_count] == '0' && arg[zeros_count + 1] != '\0')
+		zeros_count++;
+	return (zeros_count);
 }
 
 int	get_max(int a, int b)
