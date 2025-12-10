@@ -1,6 +1,4 @@
-# Push_Swap
-
-### This project has been created as part of the 42 curriculum by abahoumi.
+***This project has been created as part of the 42 curriculum by abahoumi.***
 
 ## Description
 Push_swap is a sort algorithm project. The goal is to sort a number set on a stack in ascending order, with a limited set of operations, using the minimum number of moves.
