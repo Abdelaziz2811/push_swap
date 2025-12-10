@@ -1,20 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   checker_utils.c                                    :+:      :+:    :+:   */
+/*   get_next_line_bonus.h                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: abahoumi <abahoumi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/12/08 16:27:15 by abahoumi          #+#    #+#             */
-/*   Updated: 2025/12/08 17:44:02 by abahoumi         ###   ########.fr       */
+/*   Created: 2025/10/26 10:15:36 by abahoumi          #+#    #+#             */
+/*   Updated: 2025/12/10 16:45:02 by abahoumi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "checker_bonus.h"
+#ifndef GET_NEXT_LINE_H
+# define GET_NEXT_LINE_H
 
-void	free_memory(char **args, t_stack **a, t_stack **b)
-{
-	free_args(args);
-	free_stack(a);
-	free_stack(b);
-}
+# ifndef BUFFER_SIZE
+#  define BUFFER_SIZE 42
+# endif
+
+# include <unistd.h>
+# include <stdlib.h>
+
+char	*get_next_line(int fd);
+int		index_of(char *s, int c);
+size_t	ft_strlen_gnl(char *s);
+char	*ft_strdup_gnl(char *s);
+char	*ft_strjoin_gnl(char *s1, char *s2);
+char	*ft_substr_gnl(char *s, int start, int len);
+
+#endif
